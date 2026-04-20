@@ -38,8 +38,7 @@ X_test_final_scaled = scaler.transform(X_test_final)
 X_train, X_val, y_train, y_val = train_test_split(X_scaled, y, test_size=0.2, random_state=42)
 
 # 4. 训练 CatBoost 模型
-print("正在训练 CatBoost (基于对称树结构的最新集成算法)...")
-# 核心修复：针对多标签任务，通过 MultiOutputClassifier 包装，底层使用 Logloss + AUC
+print("正在训练 CatBoost ...")
 cat = CatBoostClassifier(
     iterations=1000,
     learning_rate=0.0178,
@@ -51,7 +50,7 @@ cat = CatBoostClassifier(
     verbose=100               # 每100代打印一次 log
 )
 
-# 使用多标签包装器，这会为 7 种缺陷各训练一个独立的 CatBoost 模型
+# 使用多标签包装器
 model = MultiOutputClassifier(cat)
 model.fit(X_train, y_train)
 
