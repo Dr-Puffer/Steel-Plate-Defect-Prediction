@@ -4,3 +4,4 @@ Classwork for "Advanced Machine Learning Theory"
   2、all.py测试了逻辑回归、随机森林、XGBoost、LightGBM和Catboost这些机器学习模型的表现，
   3、*_hyper.py文件是对LightGBM和Catboost进行超参数探索的脚本。
   4、*_train.py是LightGBM和Catboost的训练脚本，生成相关模型以及输出文件。
+  5、训练集与测试集请在Kaggle官网下载：https://www.kaggle.com/competitions/playground-series-s4e3
